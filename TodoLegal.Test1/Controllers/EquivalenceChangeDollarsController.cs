@@ -32,12 +32,12 @@ namespace TodoLegal.Test1.Controllers
         {
             try
             {
-                EquivalenceChangeDollar equivalenceChangeDollar = await db.EquivalenceChangeDollar.FirstOrDefaultAsync(s => s.Code == code);
+                EquivalenceChangeDollar equivalenceChangeDollar = await db.EquivalenceChangeDollar.FirstOrDefaultAsync(s => s.Code.Contains(code));
 
                 if (equivalenceChangeDollar == null)
                     return NotFound();
 
-                var operation = Math.Round(valor * equivalenceChangeDollar.ValueExchangeRate, 2);
+                var operation = Math.Round(valor * equivalenceChangeDollar.ValueExchangeRate, 4);
 
                 ResultTest1 result = new ResultTest1 { Result = operation, Message = "OK", Aditional = equivalenceChangeDollar.Description };
 

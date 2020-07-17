@@ -13,7 +13,7 @@ namespace TodoLegal.Test1.Helper
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        public CallAPIGetType(int timeOut = 10000)
+        public CallAPIGetType(int timeOut = 25000)
         {
             TimeOut = timeOut;
         }
